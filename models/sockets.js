@@ -18,6 +18,11 @@ class Sockets {
             
             socket.emit('markers-active', this.markers.actives)
             
+            socket.on('new-marker',(marcador)=>{
+                this.markers.addMarker(marcador);
+
+                socket.broadcats.emit('new-marker', marcador)
+            })
         })
 
     }
