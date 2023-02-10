@@ -23,6 +23,12 @@ class Sockets {
 
                 socket.broadcast.emit( 'new-marker', marker );
             })
+
+            socket.on('update-marker', (marker)=>{
+                this.markers.updateMarker(marker);
+                socket.broadcast.emit('update-marker', marker);
+            });
+
         })
 
     }
