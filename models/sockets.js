@@ -15,7 +15,8 @@ class Sockets {
     socketEvents() {
         // on connection
         this.io.on('connection', (socket) => {
-            console.log('cliente conectado');
+            
+            socket.emit('markers-active', this.markers.actives)
             
         })
 
