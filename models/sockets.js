@@ -18,10 +18,10 @@ class Sockets {
             
             socket.emit('markers-active', this.markers.actives)
             
-            socket.on('new-marker',(marcador)=>{
-                this.markers.addMarker(marcador);
+            socket.on('new-marker',(marker)=>{
+                this.markers.addMarker(marker);
 
-                socket.broadcats.emit('new-marker', marcador)
+                socket.broadcast.emit( 'new-marker', marker );
             })
         })
 
