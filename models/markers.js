@@ -10,6 +10,11 @@ class Markers{
 
     addMarker(marker){
         this.actives[marker.id] = marker;
+        return marker;
+    }
+
+    clearMarker(id){
+        delete this.actives[id];
     }
 
 }
