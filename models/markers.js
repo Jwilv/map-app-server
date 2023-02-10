@@ -17,6 +17,10 @@ class Markers{
         delete this.actives[id];
     }
 
+    updateMarker(marker){
+        this.actives[marker.id] = marker;
+    }
+
 }
 
 module.exports = Markers;
